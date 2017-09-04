@@ -1,14 +1,5 @@
-@font-face {
-  font-family: 'HelveticaNeue';
-  src: url("../fonts/HelveticaNeue.ttf.woff2") format('woff2'),
-       url("../fonts/HelveticaNeue.ttf.woff") format('woff'),
-       url("../fonts/HelveticaNeue.ttf.ttf") format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 .header {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
+  font-family: "Open Sans";
+  font-weight: 300;
 }

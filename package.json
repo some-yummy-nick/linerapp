@@ -15,15 +15,13 @@
     "gulp-less": "^3.3.2",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^7.0.0",
-    "gulp-purifycss": "^0.2.0",
     "gulp-util": "^3.0.8",
     "path": "^0.12.7",
     "postcss-assets": "^5.0.0",
     "postcss-color-rgba-fallback": "^3.0.0",
     "postcss-easysprites": "^0.1.8",
     "postcss-filter-gradient": "^1.0.0",
-    "postcss-font-magician": "^2.0.0",
-    "postcss-line-height-px-to-unitless": "^0.2.1"
+    "postcss-font-magician": "^2.0.0"
   },
   "browserslist": [
     "last 10 versions",

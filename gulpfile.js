@@ -4,7 +4,6 @@ var gulp = require('gulp'),
   gutil = require('gulp-util'),
   less = require('gulp-less'),
   browserSync = require('browser-sync').create(),
-  purify = require('gulp-purifycss'),
   postcss = require('gulp-postcss');
 
 gulp.task('css', function () {
@@ -23,7 +22,7 @@ gulp.task('css', function () {
         }),
         require('postcss-font-magician')({
           variants: {
-            'Roboto Condensed': {
+            'Roboto': {
               '700': []
             }
           },
@@ -41,7 +40,6 @@ gulp.task('css', function () {
         })
       ])
     )
-    .pipe(purify(['./js/*.js', './*.html']))
     .pipe(gulp.dest('./css'))
     .pipe(browserSync.stream());
 });

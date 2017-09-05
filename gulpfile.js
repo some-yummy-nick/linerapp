@@ -7,7 +7,7 @@ var gulp = require('gulp'),
 	postcss = require('gulp-postcss');
 
 gulp.task('css', function () {
-	return gulp.src('./tpl/less/style_less.less')
+	return gulp.src('./less/style.less')
 
 		.pipe(plumber({
 			errorHandler: function (error) {
@@ -18,7 +18,7 @@ gulp.task('css', function () {
 		.pipe(less())
 		.pipe(postcss([
 				require('postcss-assets')({
-					loadPaths: ['tpl/img/']
+					loadPaths: ['img/']
 				}),
 				require('postcss-font-magician')({
 					variants: {
@@ -30,18 +30,17 @@ gulp.task('css', function () {
 				}),
 				require('autoprefixer')(),
 				require('postcss-easysprites')({
-					imagePath: './tpl/images/sprite',
-					spritePath: './tpl/images'
+					imagePath: './img/sprite',
+					spritePath: './img'
 				}),
 				require('postcss-filter-gradient'),//поддержка градиентов ниже ie9
 				require("postcss-color-rgba-fallback"),//добавляет цвет если нет поддержки прозрачности
-				//require('postcss-rgb-plz'),//конвертирует hex в rgb
 				require('css-mqpacker')({
 					sort: true
 				})
 			])
 		)
-		.pipe(gulp.dest('./tpl/css'))
+		.pipe(gulp.dest('./css'))
 		.pipe(browserSync.stream());
 });
 
@@ -50,14 +49,14 @@ gulp.task('server', ['css'], function () {
 		notify: false,
 		open: false,
 		server: {
-			baseDir: './tpl'
+			baseDir: './'
 		}
 	});
 });
 
 gulp.task("watch", function () {
 	gulp.watch('**/*/*.less', ['css']);
-	gulp.watch("**/*/*.html").on('change', browserSync.reload);
+	gulp.watch("/*.html").on('change', browserSync.reload);
 	gulp.watch("js/*.js").on('change', browserSync.reload);
 });
 

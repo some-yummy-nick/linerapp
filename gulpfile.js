@@ -34,8 +34,6 @@ gulp.task('css', function () {
           imagePath: './img/sprite',
           spritePath: './img'
         }),
-        require('postcss-filter-gradient'),//поддержка градиентов ниже ie9
-        require("postcss-color-rgba-fallback"),//добавляет цвет если нет поддержки прозрачности
         require('css-mqpacker')({
           sort: true
         })

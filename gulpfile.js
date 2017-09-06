@@ -39,7 +39,7 @@ gulp.task('css', function () {
         })
       ])
     )
-    .pipe(purify(['./js/*.js', './*.html']))
+    //.pipe(purify(['./js/*.js', './*.html']))
     .pipe(gulp.dest('./css'))
     .pipe(browserSync.stream());
 });
@@ -49,7 +49,7 @@ gulp.task('server', ['css'], function () {
     notify: false,
     open: false,
     server: {
-      baseDir: './'
+      baseDir: './tpl'
     }
   });
 });

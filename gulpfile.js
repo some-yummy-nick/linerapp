@@ -1,22 +1,22 @@
-var gulp = require('gulp'),
-  path = require('path'),
-  plumber = require('gulp-plumber'),
-  gutil = require('gulp-util'),
-  less = require('gulp-less'),
-  browserSync = require('browser-sync').create(),
-  postcss = require('gulp-postcss');
+const gulp = require("gulp"),
+  browserSync = require('browser-sync').create();
+
+const $ = require("gulp-load-plugins")({
+  pattern: ["*"],
+  scope: ["devDependencies"]
+});
+
+const onError = (err) => {
+  console.log(err);
+};
 
 gulp.task('css', function () {
   return gulp.src('./less/style.less')
-
-    .pipe(plumber({
-      errorHandler: function (error) {
-        gutil.log('Error: ' + error.message);
-        this.emit('end');
-      }
-    }))
-    .pipe(less())
-    .pipe(postcss([
+    .pipe($.plumber({errorHandler: onError}))
+    .pipe($.sourcemaps.init({loadMaps: true}))
+    .pipe($.less())
+    .pipe($.sourcemaps.write())
+    .pipe($.postcss([
         require('postcss-assets')({
           loadPaths: ['img/']
         }),
@@ -33,8 +33,6 @@ gulp.task('css', function () {
           imagePath: './img/sprite',
           spritePath: './img'
         }),
-        require('postcss-filter-gradient'),//поддержка градиентов ниже ie9
-        require("postcss-color-rgba-fallback"),//добавляет цвет если нет поддержки прозрачности
         require('css-mqpacker')({
           sort: true
         })
@@ -53,6 +51,7 @@ gulp.task('server', ['css'], function () {
     }
   });
 });
+
 
 gulp.task("watch", function () {
   gulp.watch('**/*/*.less', ['css']);

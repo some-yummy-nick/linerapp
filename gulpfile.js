@@ -47,7 +47,7 @@ gulp.task('server', ['css'], function () {
     notify: false,
     open: false,
     server: {
-      baseDir: './tpl'
+      baseDir: './'
     }
   });
 });

@@ -16,6 +16,7 @@
     "gulp-postcss": "^7.0.0",
     "gulp-sourcemaps": "^2.6.1",
     "gulp-util": "^3.0.8",
+    "gulp-webp": "^2.3.0",
     "path": "^0.12.7",
     "postcss-assets": "^5.0.0",
     "postcss-easysprites": "^0.1.8",

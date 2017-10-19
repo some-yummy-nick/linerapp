@@ -10,15 +10,23 @@ const onError = (err) => {
   console.log(err);
 };
 
+gulp.task('images', () =>
+  gulp.src('images/*.{jpg,png,jpeg}')
+    .pipe($.webp({
+      quality: 80,
+      preset: 'photo',
+      method: 6
+    }))
+    .pipe(gulp.dest('images'))
+);
+
 gulp.task('css', function () {
   return gulp.src('./less/style.less')
     .pipe($.plumber({errorHandler: onError}))
-    .pipe($.sourcemaps.init({loadMaps: true}))
     .pipe($.less())
-    .pipe($.sourcemaps.write())
     .pipe($.postcss([
         require('postcss-assets')({
-          loadPaths: ['img/']
+          loadPaths: ['images/']
         }),
         require('postcss-font-magician')({
           variants: {
@@ -30,8 +38,8 @@ gulp.task('css', function () {
         }),
         require('autoprefixer')(),
         require('postcss-easysprites')({
-          imagePath: './img/sprite',
-          spritePath: './img'
+          imagePath: './images/sprite',
+          spritePath: './images'
         }),
         require('css-mqpacker')({
           sort: true

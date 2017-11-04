@@ -1,9 +1,8 @@
 const gulp = require("gulp"),
   browserSync = require("browser-sync").create(),
-  jpegtran = require('imagemin-jpegtran'),
-  optipng = require('imagemin-optipng'),
-  svgo = require('imagemin-svgo'),
-  pngquant = require('imagemin-pngquant');
+  rimraf = require('rimraf'),
+  path = require('path'),
+  through = require('through2');
 
 const $ = require("gulp-load-plugins")({
   pattern: ["*"],
@@ -13,6 +12,8 @@ const $ = require("gulp-load-plugins")({
 const onError = (err) => {
   console.log(err);
 };
+
+var NODE_ENV = process.env.NODE_ENV || 'development';
 
 gulp.task("css", function () {
   return gulp.src("./less/style.less")
@@ -41,9 +42,45 @@ gulp.task("css", function () {
       ])
     )
     .pipe($.webpcss({}))
+    .pipe($.if(NODE_ENV === 'production',
+      $.rev()
+    ))
     .pipe(gulp.dest("./css"))
+    .pipe($.rev.manifest())
+    .pipe(gulp.dest('./'))
+
+});
+
+gulp.task('update', ["css"], function () {
+  return gulp.src(['./rev-manifest.json', './*.html'])
+    .pipe($.revCollector({
+      replaceReved: true,
+    }))
+    .pipe(gulp.dest('./'))
     .pipe(browserSync.stream());
 });
+
+function cleaner() {
+  return through.obj(function (file, enc, cb) {
+    rimraf(path.resolve((file.cwd || process.cwd()), file.path), function (err) {
+      if (err) {
+        this.emit('error', new $.util.PluginError('Cleanup old files', err));
+      }
+      this.push(file);
+      cb();
+    }.bind(this));
+  });
+}
+
+gulp.task('clean', ["update"], function () {
+  gulp.src(['./css/**/*.*'], {read: false})
+    .pipe($.revOutdated(1)) // leave 1 latest asset file for every file name prefix.
+    .pipe(cleaner());
+
+  return;
+});
+
+gulp.task('rev-all', ["css", "update", "clean"]);
 
 gulp.task("webp", () =>
   gulp.src("images/*.{jpg,png,jpeg}")
@@ -91,16 +128,15 @@ gulp.task("server", ["css"], function () {
   });
 });
 
-
 gulp.task("watch", function () {
   gulp.watch("./less/**/*.less", ["css"]);
   gulp.watch("*.html").on("change", browserSync.reload);
   gulp.watch("./js/*.js").on("change", browserSync.reload);
 });
 
-gulp.task("build", ["css", "images", "webp"]);
+gulp.task("build", ["rev-all", "images", "webp"]);
 
-gulp.task("default", ["build", "watch", "server", "images", "webp"]);
+gulp.task("default", ["css", "watch", "server", "images", "webp"]);
 
 
 

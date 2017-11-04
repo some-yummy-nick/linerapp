@@ -2,7 +2,8 @@
   "name": "project",
   "scripts": {
     "start": "gulp",
-    "build": "gulp build"
+    "build": "set NODE_ENV=production&&npm run dest",
+    "dest": "gulp build"
   },
   "author": "Marat",
   "devDependencies": {
@@ -10,11 +11,15 @@
     "browser-sync": "^2.18.13",
     "css-mqpacker": "^6.0.1",
     "gulp": "^3.9.1",
+    "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.4.0",
     "gulp-less": "^3.3.2",
     "gulp-load-plugins": "^1.5.0",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^7.0.0",
+    "gulp-rev": "^8.1.0",
+    "gulp-rev-collector": "^1.2.2",
+    "gulp-rev-outdated": "^0.1.1",
     "gulp-sourcemaps": "^2.6.1",
     "gulp-util": "^3.0.8",
     "gulp-webp": "^2.3.0",
@@ -26,7 +31,9 @@
     "path": "^0.12.7",
     "postcss-assets": "^5.0.0",
     "postcss-easysprites": "^0.1.8",
-    "postcss-font-magician": "^2.0.0"
+    "postcss-font-magician": "^2.0.0",
+    "rimraf": "^2.6.2",
+    "through2": "^2.0.3"
   },
   "browserslist": [
     "last 10 versions",

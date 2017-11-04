@@ -2,12 +2,11 @@ node version 8.9.0
 
 ѕишем в консоли 
 
-npm i gulp -g
+1. npm i gulp -g
 
-npm i
+2. npm i
 
--
-npm start дл€ разработки
+3. npm start дл€ разработки
 
 или
 

@@ -465,13 +465,9 @@ svg {
   margin-left: auto;
   max-width: 1200px;
 }
-.header {
-  background: url(../images/trainer.jpg);
-}
 .footer {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0 auto;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
 }
-.webp .header { background: url(../images/trainer.webp); }

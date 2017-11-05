@@ -20,7 +20,6 @@
     "gulp-rev": "^8.1.0",
     "gulp-rev-collector": "^1.2.2",
     "gulp-rev-outdated": "^0.1.1",
-    "gulp-sourcemaps": "^2.6.1",
     "gulp-util": "^3.0.8",
     "gulp-webp": "^2.3.0",
     "gulp-webpcss": "^1.1.1",

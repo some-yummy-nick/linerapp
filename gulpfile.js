@@ -42,9 +42,7 @@ gulp.task("css", function () {
       ])
     )
     .pipe($.webpcss({}))
-    .pipe($.if(NODE_ENV === 'production',
-      $.rev()
-    ))
+    .pipe($.rev())
     .pipe(gulp.dest("./css"))
     .pipe($.rev.manifest())
     .pipe(gulp.dest('./'))
@@ -82,7 +80,7 @@ gulp.task('clean', ["update"], function () {
 
 gulp.task('rev-all', ["css", "update", "clean"]);
 
-gulp.task("webp", () =>
+gulp.task("webp", () => {
   gulp.src("images/*.{jpg,png,jpeg}")
     .pipe($.webp({
       quality: 80,
@@ -90,7 +88,7 @@ gulp.task("webp", () =>
       method: 6
     }))
     .pipe(gulp.dest("images"))
-);
+});
 
 gulp.task('images', () => {
   return gulp.src('images/*.+(jpg|JPG|png|svg)')
@@ -118,7 +116,7 @@ gulp.task('images', () => {
     .pipe(gulp.dest('images'))
 });
 
-gulp.task("server", ["css"], function () {
+gulp.task("server", ["rev-all"], function () {
   browserSync.init({
     notify: false,
     open: false,
@@ -129,14 +127,14 @@ gulp.task("server", ["css"], function () {
 });
 
 gulp.task("watch", function () {
-  gulp.watch("./less/**/*.less", ["css"]);
+  gulp.watch("./less/**/*.less", ["rev-all"]);
   gulp.watch("*.html").on("change", browserSync.reload);
   gulp.watch("./js/*.js").on("change", browserSync.reload);
 });
 
 gulp.task("build", ["rev-all", "images", "webp"]);
 
-gulp.task("default", ["css", "watch", "server", "images", "webp"]);
+gulp.task("default", ["rev-all", "watch", "server", "images", "webp"]);
 
 
 

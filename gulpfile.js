@@ -42,11 +42,16 @@ gulp.task("css", function () {
       ])
     )
     .pipe($.webpcss({}))
-    .pipe($.rev())
+    .pipe($.if(NODE_ENV === 'cache',
+      $.rev()
+    ))
     .pipe(gulp.dest("./css"))
-    .pipe($.rev.manifest())
-    .pipe(gulp.dest('./'))
-
+    .pipe($.if(NODE_ENV === 'cache',
+      $.rev.manifest()
+    ))
+    .pipe($.if(NODE_ENV === 'cache',
+      gulp.dest('./')
+    ))
 });
 
 gulp.task('update', ["css"], function () {
@@ -116,7 +121,7 @@ gulp.task('images', () => {
     .pipe(gulp.dest('images'))
 });
 
-gulp.task("server", ["rev-all"], function () {
+gulp.task("server", ["css"], function () {
   browserSync.init({
     notify: false,
     open: false,
@@ -127,14 +132,17 @@ gulp.task("server", ["rev-all"], function () {
 });
 
 gulp.task("watch", function () {
-  gulp.watch("./less/**/*.less", ["rev-all"]);
-  gulp.watch("*.html").on("change", browserSync.reload);
+  gulp.watch("./less/**/*.less", ["css"]);
+  gulp.watch("images/*.+(jpg|JPG|png|svg)", ["images", "webp"]);
+  gulp.watch("./*.html").on("change", browserSync.reload);
   gulp.watch("./js/*.js").on("change", browserSync.reload);
 });
 
-gulp.task("build", ["rev-all", "images", "webp"]);
+gulp.task("cache-clean", ["rev-all", "images", "webp", "watch", "server"]);
 
-gulp.task("default", ["rev-all", "watch", "server", "images", "webp"]);
+gulp.task("build", ["css", "images", "webp"]);
+
+gulp.task("default", ["css", "watch", "server", "images", "webp"]);
 
 
 

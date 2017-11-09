@@ -19,6 +19,7 @@ gulp.task("css", function () {
   return gulp.src("./less/style.less")
     .pipe($.plumber({errorHandler: onError}))
     .pipe($.less())
+    .pipe($.webpcss({}))
     .pipe($.postcss([
         require("postcss-assets")({
           loadPaths: ["images/"]
@@ -41,7 +42,7 @@ gulp.task("css", function () {
         })
       ])
     )
-    .pipe($.webpcss({}))
+
     .pipe($.if(NODE_ENV === 'cache',
       $.rev()
     ))
@@ -97,7 +98,7 @@ gulp.task("webp", () => {
 
 gulp.task('images', () => {
   return gulp.src('images/*.+(jpg|JPG|png|svg)')
-    .pipe($.imagemin({
+    .pipe($.cache($.imagemin({
       svgo: {
         removeViewBox: true
       },
@@ -117,7 +118,7 @@ gulp.task('images', () => {
         quality: '65-70', speed: 5
       }],
       verbose: true
-    }))
+    })))
     .pipe(gulp.dest('images'))
 });
 
@@ -133,16 +134,16 @@ gulp.task("server", ["css"], function () {
 
 gulp.task("watch", function () {
   gulp.watch("./less/**/*.less", ["css"]);
-  gulp.watch("images/*.+(jpg|JPG|png|svg)", ["images", "webp"]);
+  gulp.watch("images/*.+(jpg|JPG|png|svg)", ["images"]);
   gulp.watch("./*.html").on("change", browserSync.reload);
   gulp.watch("./js/*.js").on("change", browserSync.reload);
 });
 
-gulp.task("cache-clean", ["rev-all", "images", "webp", "watch", "server"]);
+gulp.task("cache-clean", ["rev-all", "images", "watch", "server"]);
 
 gulp.task("build", ["css", "images", "webp"]);
 
-gulp.task("default", ["css", "watch", "server", "images", "webp"]);
+gulp.task("default", ["css", "watch", "server", "images"]);
 
 
 

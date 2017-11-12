@@ -32,6 +32,9 @@ gulp.task("css", function () {
           },
           formats: "woff2 woff ttf"
         }),
+        require('postcss-image-inliner')({
+          assetPaths: ["https://icongr.am"]
+        }),
         require("autoprefixer")(),
         require("postcss-easysprites")({
           imagePath: "./images/sprite",
@@ -42,7 +45,6 @@ gulp.task("css", function () {
         })
       ])
     )
-
     .pipe($.if(NODE_ENV === 'cache',
       $.rev()
     ))
@@ -53,6 +55,8 @@ gulp.task("css", function () {
     .pipe($.if(NODE_ENV === 'cache',
       gulp.dest('./')
     ))
+    .pipe(browserSync.stream());
+
 });
 
 gulp.task('update', ["css"], function () {

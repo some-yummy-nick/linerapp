@@ -34,6 +34,7 @@
     "postcss-assets": "^5.0.0",
     "postcss-easysprites": "^0.1.8",
     "postcss-font-magician": "^2.0.0",
+    "postcss-image-inliner": "^1.0.6",
     "rimraf": "^2.6.2",
     "through2": "^2.0.3"
   },

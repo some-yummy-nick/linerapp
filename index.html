@@ -19,7 +19,7 @@
 		}
 
 		.font-marketsans .geometria {
-			font-family: "Geometria","Helvetica Neue", Helvetica,Arial,Roboto,sans-serif
+			font-family: "Geometria", "Helvetica Neue", Helvetica, Arial, Roboto, sans-serif
 		}
 	</style><!--загрузка кастомных шрифтов -->
 	<script>
@@ -34,7 +34,69 @@
 <body>
 <div class="wrapper">
 	<div class="content">
-		<header class="header geometria">header</header>
+		<header class="header geometria">
+			<div class="container">
+				<div class="header__blocks">
+					<div class="header__block">
+						<div class="logo">
+							<a class="logo__link" href="#" title="Перейти на главную страницу">
+								<img class="logo__pic" src="images/logo.jpg" alt="Перейти на главную страницу">
+							</a>
+						</div>
+					</div>
+					<div class="header__block header__block_wide">
+						<button class="hamburger" id="js-hamburger" aria-expanded="false">
+					<span
+							class="hamburger__screen-reader-text">Меню</span>
+							<svg class="hamburger__icon" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg"
+									 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100">
+								<g class="hamburger__svg">
+									<path class="line line-1" d="M5 13h90v14H5z"/>
+									<path class="line line-2" d="M5 43h90v14H5z"/>
+									<path class="line line-3" d="M5 73h90v14H5z"/>
+								</g>
+							</svg>
+						</button>
+						<div class="menu" id="js-menu" aria-expanded="false">
+							<nav>
+								<ul class="menu__list">
+									<li class="menu__item">
+										<a class="menu__link" href="#">Продукты</a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#">Корзина</a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#">Доставка</a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#">Руководство</a>
+									</li>
+									<li class="menu__item">
+										<a class="menu__link" href="#">Контакты</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<div class="header__block header__block_mobile">
+						<div class="social">
+							<ul class="social__list">
+								<li class="social__item">
+									<a class="social__link social__link_vk" href="#">В контакте</a>
+								</li>
+								<li class="social__item">
+									<a class="social__link social__link_fb" href="#">Facebook</a>
+								</li>
+								<li class="social__item">
+									<a class="social__link social__link_youtube" href="#">Youtube</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
 	</div>
 	<footer class="footer" id="footer">footer</footer>
 </div>

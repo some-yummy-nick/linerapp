@@ -25,7 +25,6 @@
     "gulp-rev-outdated": "^0.1.1",
     "gulp-util": "^3.0.8",
     "gulp-webp": "^2.3.0",
-    "gulp-webpcss": "^1.1.1",
     "imagemin-jpeg-recompress": "^5.1.0",
     "imagemin-jpegtran": "^5.0.2",
     "imagemin-pngquant": "^5.0.1",

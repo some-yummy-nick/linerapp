@@ -1,0 +1,77 @@
+.hamburger {
+	display: none;
+	border: none;
+	border-radius: 0;
+	background: none;
+	color: #fff;
+	cursor: pointer;
+	padding: 1em;
+	text-transform: uppercase;
+	transition: all 0.25s ease-in-out;
+	font-size: 0.875em;
+
+	&:focus {
+		outline: thin dotted;
+		outline-offset: -2px;
+	}
+
+	&__icon {
+		display: inline-block;
+		fill:#000;
+		width: 2em;
+		height: 2em;
+		vertical-align: middle;
+		position: relative;
+		top: 0;
+	}
+
+	&__svg {
+
+		.line {
+			opacity: 1;
+			transform: rotate(0) translateY(0) translateX(0);
+			transform-origin: 1em 1em;
+			transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+		}
+
+		.line-1 {
+			transform-origin: 1em 2.5em;
+		}
+
+		.line-3 {
+			transform-origin: 1em 4.5em;
+		}
+	}
+
+	/* Text meant only for screen readers. */
+	&__screen-reader-text {
+		clip: rect(1px, 1px, 1px, 1px);
+		position: absolute !important;
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+	}
+
+	&.opened {
+
+		.hamburger__svg {
+
+			.line-1 {
+				transform: rotate(45deg) translateY(0) translateX(0);
+			}
+
+			.line-2 {
+				opacity: 0;
+			}
+
+			.line-3 {
+				transform: rotate(-45deg) translateY(0em) translateX(0em);
+			}
+		}
+	}
+
+	@media screen and (max-width: @screen-sm) {
+		display: inline-block;
+	}
+}
+

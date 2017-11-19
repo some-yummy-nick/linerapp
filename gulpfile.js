@@ -16,10 +16,9 @@ const onError = (err) => {
 var NODE_ENV = process.env.NODE_ENV || 'development';
 
 gulp.task("css", function () {
-  return gulp.src("./less/style.less")
+  return gulp.src("less/style.less")
     .pipe($.plumber({errorHandler: onError}))
     .pipe($.less())
-    .pipe($.webpcss({}))
     .pipe($.postcss([
         require("postcss-assets")({
           loadPaths: ["images/"]
@@ -37,8 +36,8 @@ gulp.task("css", function () {
         }),
         require("autoprefixer")(),
         require("postcss-easysprites")({
-          imagePath: "./images/sprite",
-          spritePath: "./images"
+          imagePath: "images/sprite",
+          spritePath: "images"
         }),
         require("css-mqpacker")({
           sort: true
@@ -48,13 +47,14 @@ gulp.task("css", function () {
     .pipe($.if(NODE_ENV === 'cache',
       $.rev()
     ))
-    .pipe(gulp.dest("./css"))
+    .pipe(gulp.dest("css"))
     .pipe($.if(NODE_ENV === 'cache',
       $.rev.manifest()
     ))
     .pipe($.if(NODE_ENV === 'cache',
       gulp.dest('./')
     ))
+
     .pipe(browserSync.stream());
 
 });
@@ -137,7 +137,7 @@ gulp.task("server", ["css"], function () {
 });
 
 gulp.task("watch", function () {
-  gulp.watch("./less/**/*.less", ["css"]);
+  gulp.watch("less/**/*.less", ["css"]);
   gulp.watch("images/*.+(jpg|JPG|png|svg)", ["images"]);
   gulp.watch("./*.html").on("change", browserSync.reload);
   gulp.watch("./js/*.js").on("change", browserSync.reload);

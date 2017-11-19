@@ -6,8 +6,4 @@
 
 2. npm i
 
-3. npm start для разработки
-
-или
-
-npm run build для финальной сборки
+3. npm start для разработки или npm run build для финальной сборки

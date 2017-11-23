@@ -1,8 +1,5 @@
 const gulp = require("gulp"),
-  browserSync = require("browser-sync").create(),
-  rimraf = require('rimraf'),
-  path = require('path'),
-  through = require('through2');
+  browserSync = require("browser-sync").create();
 
 const $ = require("gulp-load-plugins")({
   pattern: ["*"],
@@ -44,51 +41,10 @@ gulp.task("css", function () {
         })
       ])
     )
-    .pipe($.if(NODE_ENV === 'cache',
-      $.rev()
-    ))
     .pipe(gulp.dest("css"))
-    .pipe($.if(NODE_ENV === 'cache',
-      $.rev.manifest()
-    ))
-    .pipe($.if(NODE_ENV === 'cache',
-      gulp.dest('./')
-    ))
-
     .pipe(browserSync.stream());
 
 });
-
-gulp.task('update', ["css"], function () {
-  return gulp.src(['./rev-manifest.json', './*.html'])
-    .pipe($.revCollector({
-      replaceReved: true,
-    }))
-    .pipe(gulp.dest('./'))
-    .pipe(browserSync.stream());
-});
-
-function cleaner() {
-  return through.obj(function (file, enc, cb) {
-    rimraf(path.resolve((file.cwd || process.cwd()), file.path), function (err) {
-      if (err) {
-        this.emit('error', new $.util.PluginError('Cleanup old files', err));
-      }
-      this.push(file);
-      cb();
-    }.bind(this));
-  });
-}
-
-gulp.task('clean', ["update"], function () {
-  gulp.src(['./css/**/*.*'], {read: false})
-    .pipe($.revOutdated(1)) // leave 1 latest asset file for every file name prefix.
-    .pipe(cleaner());
-
-  return;
-});
-
-gulp.task('rev-all', ["css", "update", "clean"]);
 
 gulp.task("webp", () => {
   gulp.src("images/*.{jpg,png,jpeg}")
@@ -142,8 +98,6 @@ gulp.task("watch", function () {
   gulp.watch("./*.html").on("change", browserSync.reload);
   gulp.watch("./js/*.js").on("change", browserSync.reload);
 });
-
-gulp.task("cache-clean", ["rev-all", "images", "watch", "server"]);
 
 gulp.task("build", ["css", "images", "webp"]);
 

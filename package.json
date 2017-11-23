@@ -3,9 +3,8 @@
   "scripts": {
     "start": "gulp",
     "build": "set NODE_ENV=production&&npm run dest",
-    "cache": "set NODE_ENV=cache&&npm run cache-clean",
     "dest": "gulp build",
-    "cache-clean": "gulp cache-clean"
+    "sprite": "svg-sprite-generate -d ./images/svg/ -o ./images/sprite.svg"
   },
   "author": "Marat",
   "devDependencies": {
@@ -20,10 +19,6 @@
     "gulp-load-plugins": "^1.5.0",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^7.0.0",
-    "gulp-rev": "^8.1.0",
-    "gulp-rev-collector": "^1.2.2",
-    "gulp-rev-outdated": "^0.1.1",
-    "gulp-util": "^3.0.8",
     "gulp-webp": "^2.3.0",
     "imagemin-jpeg-recompress": "^5.1.0",
     "imagemin-jpegtran": "^5.0.2",
@@ -33,9 +28,7 @@
     "postcss-assets": "^5.0.0",
     "postcss-easysprites": "^0.1.8",
     "postcss-font-magician": "^2.0.0",
-    "postcss-image-inliner": "^1.0.6",
-    "rimraf": "^2.6.2",
-    "through2": "^2.0.3"
+    "postcss-image-inliner": "^1.0.6"
   },
   "browserslist": [
     "last 10 versions",

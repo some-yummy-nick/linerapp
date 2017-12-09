@@ -1,7 +1,8 @@
 $(document).ready(function () {
 
   addVoidForLinks($("a"));
-  scrollLinks($("a"));
+  scrollLinks($(".scroll"));
   setEqualHeight($(".row>.col"));
   hamburger('js-hamburger', "js-menu");
+
 });

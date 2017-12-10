@@ -13,9 +13,9 @@ const onError = (err) => {
 var NODE_ENV = process.env.NODE_ENV || 'development';
 
 gulp.task("css", function () {
-  return gulp.src("less/style.less")
+  return gulp.src("scss/style.scss")
     .pipe($.plumber({errorHandler: onError}))
-    .pipe($.less())
+    .pipe($.sass())
     .pipe($.postcss([
         require("postcss-assets")({
           loadPaths: ["images/"]
@@ -93,7 +93,7 @@ gulp.task("server", ["css"], function () {
 });
 
 gulp.task("watch", function () {
-  gulp.watch("less/**/*.less", ["css"]);
+  gulp.watch("scss/**/*.scss", ["css"]);
   gulp.watch("images/*.+(jpg|JPG|png|svg)", ["images"]);
   gulp.watch("./*.html").on("change", browserSync.reload);
   gulp.watch("./js/*.js").on("change", browserSync.reload);

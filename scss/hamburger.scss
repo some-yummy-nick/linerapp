@@ -1,5 +1,15 @@
+:root {
+	--hamburger-color: #000;
+	--hamburger-width: 40px;
+	--hamburger-height: 20px;
+	--hamburger-height-line: 2px;
+}
+
 .hamburger {
+	position: relative;
 	display: none;
+	width: var(--hamburger-width);
+	height: var(--hamburger-height);
 	border: none;
 	border-radius: 0;
 	background: none;
@@ -14,33 +24,20 @@
 		outline: thin dotted;
 		outline-offset: -2px;
 	}
-
-	&__icon {
-		display: inline-block;
-		fill:#000;
-		width: 2em;
-		height: 2em;
-		vertical-align: middle;
-		position: relative;
-		top: 0;
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		height: var(--hamburger-height-line);
+		width: 100%;
+		top: calc(var(--hamburger-height) / 2);
+		left: 0;
+		background-color: var(--hamburger-color);
+		transition: all 0.3s;
 	}
-
-	&__svg {
-
-		.line {
-			opacity: 1;
-			transform: rotate(0) translateY(0) translateX(0);
-			transform-origin: 1em 1em;
-			transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
-		}
-
-		.line-1 {
-			transform-origin: 1em 2.5em;
-		}
-
-		.line-3 {
-			transform-origin: 1em 4.5em;
-		}
+	&::after {
+		box-shadow: 0 calc(var(--hamburger-height) / 2) 0 0 var(--hamburger-color),
+		0 calc(var(--hamburger-height) / -2) 0 0 var(--hamburger-color);
 	}
 
 	/* Text meant only for screen readers. */
@@ -53,21 +50,18 @@
 	}
 
 	&.opened {
-
-		.hamburger__svg {
-
-			.line-1 {
-				transform: rotate(45deg) translateY(0) translateX(0);
-			}
-
-			.line-2 {
-				opacity: 0;
-			}
-
-			.line-3 {
-				transform: rotate(-45deg) translateY(0em) translateX(0em);
-			}
+		&::after {
+			transform: rotate(45deg);
+			box-shadow: none;
 		}
+		&::before {
+			transform: rotate(-45deg);
+		}
+	}
+
+	@media screen and (max-width: $screen-xs) {
+		--hamburger-width: 30px;
+		--hamburger-height: 15px;
 	}
 
 	@media screen and (max-width: $screen-sm) {

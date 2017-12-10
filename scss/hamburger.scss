@@ -70,7 +70,7 @@
 		}
 	}
 
-	@media screen and (max-width: @screen-sm) {
+	@media screen and (max-width: $screen-sm) {
 		display: inline-block;
 	}
 }

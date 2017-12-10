@@ -19,7 +19,7 @@
 		}
 	}
 
-	@media screen and (max-width: @screen-sm) {
+	@media screen and (max-width: $screen-sm) {
 		display: none;
 		position: absolute;
 		top: 100%;

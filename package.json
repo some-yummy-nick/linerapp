@@ -26,6 +26,7 @@
     "imagemin-svgo": "^6.0.0",
     "path": "^0.12.7",
     "postcss-assets": "^5.0.0",
+    "postcss-at2x": "^4.0.2",
     "postcss-css-variables": "^0.8.0",
     "postcss-easysprites": "^0.1.8",
     "postcss-font-magician": "^2.0.0",

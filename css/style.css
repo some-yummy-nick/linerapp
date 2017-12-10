@@ -413,6 +413,14 @@ svg {
             flex-grow: 1; }
 
 .logo {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 80px;
   width: 150px; }
   .logo__link {
@@ -421,7 +429,10 @@ svg {
   .logo__pic {
     display: block;
     max-width: 100%;
-    max-height: 100%; }
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto; }
 
 .hamburger {
   position: relative;
@@ -545,6 +556,12 @@ svg {
       -ms-flex: 0 0 auto;
           flex: 0 0 auto; }
 
+.nam {
+  height: 300px;
+  background-image: url(../images/2.jpg);
+  -webkit-background-size: cover;
+          background-size: cover; }
+
 @media screen and (max-width: 768px) {
     .header__block_wide {
       -webkit-box-ordinal-group: 2;
@@ -601,3 +618,7 @@ svg {
     -webkit-box-shadow: 0 -webkit-calc(15px / 2) 0 0 #000, 0 -webkit-calc(15px / -2) 0 0 #000; }
   .hamburger::after {
     -webkit-box-shadow: 0 -webkit-calc(15px / 2) 0 0 #000, 0 -webkit-calc(15px / -2) 0 0 #000; } }
+
+@media (min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+  .nam {
+    background-image: url(../images/2@2x.jpg); } }

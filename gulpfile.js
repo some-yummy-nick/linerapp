@@ -38,6 +38,7 @@ gulp.task("css", function () {
         }),
 	    require('postcss-css-variables')(),
 	    require('postcss-at2x'),
+	    require('postcss-rgb-plz'),
         require("css-mqpacker")({
           sort: true
         })

@@ -20,14 +20,17 @@
 	}
 
 	@media screen and (max-width: $screen-sm) {
-		display: none;
 		position: absolute;
 		top: 100%;
 		left: 0;
 		width: 100%;
+		transform: scale(0);
+		transition:transform 0.3s;
 
 		&.active {
-			display: block;
+			transform: scale(1);
+			background: #fff;
+			z-index: 10;
 		}
 
 		&__list {

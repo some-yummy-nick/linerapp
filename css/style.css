@@ -560,7 +560,10 @@ svg {
   height: 300px;
   background-image: url(../images/2.jpg);
   -webkit-background-size: cover;
-          background-size: cover; }
+          background-size: cover;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  will-change: transform; }
 
 @media screen and (max-width: 768px) {
     .header__block_wide {

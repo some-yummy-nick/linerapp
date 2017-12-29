@@ -31,6 +31,7 @@ gulp.task("css", function () {
         require('postcss-image-inliner')({
           assetPaths: ["https://icongr.am"]
         }),
+	    require('postcss-will-change')(),//support will-change in ie11
         require("autoprefixer")(),
         require("postcss-easysprites")({
           imagePath: "images/sprite",

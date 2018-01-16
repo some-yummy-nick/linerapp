@@ -1,15 +1,19 @@
 @import "variables";
-@import "reboot.scss";
-@import "base.scss";
+@import "reboot";
+@import "base";
 @import "wrapper";
-@import "content.scss";
-@import "container.scss";
-@import "header.scss";
-@import "logo.scss";
-@import "hamburger.scss";
-@import "menu.scss";
-@import "social.scss";
-@import "footer.scss";
+@import "content";
+@import "container";
+@import "header";
+@import "overlay";
+@import "logo";
+@import "hamburger";
+@import "menu";
+@import "title";
+@import "promo";
+@import "benefits";
+@import "video";
+@import "footer";
 
 .nam{
 	height: 300px;

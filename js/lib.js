@@ -32,19 +32,28 @@ function addVoidForLinks(links) {
 //Доступный hamburger https://foxland.fi/simple-accessible-svg-menu-hamburger-animation
 function hamburger(element, menu) {
   var button = document.getElementById(element),
+	  overlay = document.querySelector(".js-overlay");
     menu = document.getElementById(menu);
-  button.onclick = function () {
-    // Toggle class "opened". Set also aria-expanded to true or false.
-    if (-1 !== button.className.indexOf('opened')) {
-      button.className = button.className.replace(' opened', '');
-      button.setAttribute('aria-expanded', 'false');
-      menu.className = menu.className.replace(' active', '');
-      menu.setAttribute('aria-expanded', 'false');
-    } else {
-      button.className += ' opened';
-      button.setAttribute('aria-expanded', 'true');
-      menu.className += ' active';
-      menu.setAttribute('aria-expanded', 'true');
+    function toggleMenu() {
+	    if (-1 !== button.className.indexOf('opened')) {
+		    button.className = button.className.replace(' opened', '');
+		    button.setAttribute('aria-expanded', 'false');
+		    menu.className = menu.className.replace(' active', '');
+		    menu.setAttribute('aria-expanded', 'false');
+		    overlay.classList.remove("active");
+
+	    } else {
+		    button.className += ' opened';
+		    overlay.classList.add("active");
+		    button.setAttribute('aria-expanded', 'true');
+		    menu.className += ' active';
+		    menu.setAttribute('aria-expanded', 'true');
+	    }
     }
-  };
+    button.addEventListener("click",toggleMenu);
+
+
+  overlay.addEventListener("click",function () {
+	  toggleMenu();
+  })
 }

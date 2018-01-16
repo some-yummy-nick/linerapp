@@ -1,6 +1,6 @@
 :root {
-	--hamburger-color: #000;
-	--hamburger-width: 40px;
+	--hamburger-color: #fff;
+	--hamburger-width: 24px;
 	--hamburger-height: 20px;
 	--hamburger-height-line: 2px;
 }
@@ -19,10 +19,10 @@
 	text-transform: uppercase;
 	transition: all 0.25s ease-in-out;
 	font-size: 0.875em;
+	margin-left: 20px;
 
 	&:focus {
-		outline: thin dotted;
-		outline-offset: -2px;
+		outline:none;
 	}
 	&::before,
 	&::after {
@@ -50,6 +50,13 @@
 	}
 
 	&.opened {
+		z-index: 11;
+
+		&::before,
+		&::after{
+			background-color: #303b9b;
+		}
+
 		&::after {
 			transform: rotate(45deg);
 			box-shadow: none;
@@ -59,13 +66,24 @@
 		}
 	}
 
-	@media screen and (max-width: $screen-xs) {
-		--hamburger-width: 30px;
-		--hamburger-height: 15px;
+	@media screen and (max-width: $screen-md) {
+		display: inline-block;
+	}
+
+	@media screen and (max-width: $screen-md) and (min-width:$screen-sm){
+
+		&.opened {
+			margin-left: 205px;
+		}
 	}
 
 	@media screen and (max-width: $screen-sm) {
-		display: inline-block;
+
+		&.opened {
+			position: absolute;
+			top: 20px;
+			margin-left: 120px;
+		}
 	}
 }
 

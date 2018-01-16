@@ -1,10 +1,14 @@
 .header {
 	position: relative;
+	padding-top: 20px;
+	background-color: #303b9b;
 
 	&__blocks {
+		position: relative;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		margin-bottom: 50px;
 	}
 
 	&__block {
@@ -14,13 +18,26 @@
 		}
 	}
 
+	&__phone {
+		a {
+			color: #fff;
+			font-size: 30px;
+			font-weight: 300;
+		}
+	}
+
+	@media (min-width: 1660px) {
+		&__phone {
+			transform: translateX(70px);
+		}
+	}
+
 	@media screen and (max-width: $screen-sm) {
 
-		&__block {
+		&__phone {
 
-			&_wide {
-				order: 1;
-				flex-grow: inherit;
+			a {
+				font-size: 18px;
 			}
 		}
 	}

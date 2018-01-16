@@ -5,91 +5,184 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport"
-				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>LinerApp</title>
-	<style>
-		@font-face {
-			font-family: "Geometria";
-			src: url('css/fonts/Geometria/Geometria.woff2') format('woff2'),
-			url('css/fonts/Geometria/Geometria.woff') format('woff'),
-			url('css/fonts/Geometria/Geometria.ttf') format('truetype');
-			font-weight: normal;
-			font-style: normal;
-			font-display: optional;
-		}
-
-		.font-marketsans .geometria {
-			font-family: "Geometria", "Helvetica Neue", Helvetica, Arial, Roboto, sans-serif
-		}
-	</style><!--загрузка кастомных шрифтов -->
-	<script>
-    var useCustomFont = ('fontDisplay' in document.documentElement.style) ||
-      (localStorage && localStorage.getItem('ebay-font'));
-    if (useCustomFont) {
-      document.documentElement.classList.add('font-marketsans');
-    }
-	</script><!--загрузка кастомных шрифтов -->
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 <div class="wrapper">
+	<div class="overlay js-overlay"></div>
 	<div class="content">
+		<!--start header-->
 		<header class="header">
 			<div class="container">
 				<div class="header__blocks">
 					<div class="header__block">
 						<div class="logo">
 							<a class="logo__link" href="#" title="Перейти на главную страницу">
-								<img class="logo__pic" src="http://via.placeholder.com/150x80" alt="Перейти на главную страницу">
+								<img class="logo__pic" src="images/logo.png" alt="Перейти на главную страницу">
 							</a>
 						</div>
 					</div>
 					<div class="header__block header__block_wide">
 						<button class="hamburger" id="js-hamburger" aria-expanded="false">
 					<span
-							class="hamburger__screen-reader-text">Меню</span>
+						class="hamburger__screen-reader-text">Меню</span>
 
 						</button>
 						<div class="menu" id="js-menu" aria-expanded="false">
 							<nav>
 								<ul class="menu__list">
-									<li class="menu__item">
-										<a class="menu__link" href="#">Продукты</a>
+									<li class="menu__item menu__item_mobile">
+										<a class="menu__link js-scroll" href="#promo">Комплексное внедрение amoCRM</a>
+									</li>
+									<li class="menu__item menu__item_mobile">
+										<a class="menu__link js-scroll" href="#benefits">Что дает внедрение CRM?</a>
+									</li>
+									<li class="menu__item menu__item_mobile">
+										<a class="menu__link js-scroll" href="#video">AmoCRM</a>
 									</li>
 									<li class="menu__item">
-										<a class="menu__link" href="#">Корзина</a>
+										<a class="menu__link" href="#">О нас</a>
 									</li>
 									<li class="menu__item">
-										<a class="menu__link" href="#">Доставка</a>
+										<a class="menu__link" href="#">Услуги</a>
+									</li>
+									<li class="menu__item menu__item_mobile">
+										<a class="menu__link" href="#">Наши преимущества</a>
+									</li>
+									<li class="menu__item menu__item_mobile">
+										<a class="menu__link" href="#">Основные возможности</a>
+									</li>
+									<li class="menu__item menu__item_mobile">
+										<a class="menu__link" href="#">Наши клиенты</a>
 									</li>
 									<li class="menu__item">
-										<a class="menu__link" href="#">Руководство</a>
+										<a class="menu__link" href="#">Цены</a>
 									</li>
-									<li class="menu__item">
+									<li class="menu__item menu__item_mobile">
+										<a class="menu__link" href="#">Интересные факты</a>
+									</li>
+									<li class="menu__item menu__item_hide">
 										<a class="menu__link" href="#">Контакты</a>
 									</li>
+									<li class="menu__item menu__item_hide">
+										<a class="menu__link" href="#">Блог</a>
+									</li>
 								</ul>
+								<div class="menu__questions">
+									<div class="menu__title">остались вопросы?</div>
+									<div class="menu__phone"><a href="tel:+74995770116">+7 (499) 577-01-16</a></div>
+									<div class="menu__email"><a href="mailto:tatar@gmail.com" class="contacts__link">Напишите
+										нам</a></div>
+								</div>
 							</nav>
 						</div>
 					</div>
 					<div class="header__block header__block_mobile">
-						<div class="social">
-							<ul class="social__list">
-								<li class="social__item">
-									<a class="social__link social__link_vk" href="#">В контакте</a>
-								</li>
-								<li class="social__item">
-									<a class="social__link social__link_fb" href="#">Facebook</a>
-								</li>
-								<li class="social__item">
-									<a class="social__link social__link_youtube" href="#">Youtube</a>
-								</li>
-							</ul>
+						<div class="header__phone">
+							<a href="tel:+74995770116">+7 (499) 577-01-16</a>
 						</div>
+					</div>
+				</div>
+				<div class="promo" id="promo">
+					<div class="title title_white">Комплексное внедрение amoCRM</div>
+					<div class="promo__text">Мы реализуем проекты по комплексному внедрению amoCRM, созданию
+						индивидувльных доработок и виджетов. Мы поможем выбрать для вас оптимальное решение, проведем
+						обучение и настройку системы
+					</div>
+
+					<form class="promo__form">
+						<input class="promo__field" type="text" placeholder="Ваш e-mail">
+						<button class="promo__submit" type="submit">Получить консультацию</button>
+					</form>
+					<div class="promo__image">
+						<img src="images/promo-image-1.png" alt="">
 					</div>
 				</div>
 			</div>
 		</header>
+		<!--end header-->
+
+		<!--start benefits-->
+		<div class="benefits" id="benefits">
+			<div class="container">
+				<div class="title">Что дает внедрение CRM?</div>
+				<div class="benefits__row">
+					<div class="benefits__col">
+						<div class="benefits__item benefits__item_automatic">
+							<div class="benefits__text">Автоматизация <br>бизнес-процессов</div>
+						</div>
+					</div>
+					<div class="benefits__col">
+						<div class="benefits__item benefits__item_increase">
+							<div class="benefits__text">Увеличение <br>конверсии продаж</div>
+						</div>
+					</div>
+					<div class="benefits__col">
+						<div class="benefits__item benefits__item_reduce">
+							<div class="benefits__text">Сокращение <br>и контроль затрат</div>
+						</div>
+					</div>
+					<div class="benefits__col">
+						<div class="benefits__item benefits__item_planning">
+							<div class="benefits__text">Планирование продаж <br> и развитие бизнеса</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--end benefits-->
+
+		<!--start video-->
+		<div class="video" id="video">
+			<div class="container">
+				<div class="video__inner">
+					<div class="video__desc">
+						<div class="title title_white">amoCRM</div>
+						<div class="video__text">Полный набор инструментов, которые раскроют потенциал вашего отдела
+							продаж
+							и повысят его эффективность.
+						</div>
+					</div>
+					<div class="video__row">
+						<div class="video__col">
+							<div class="video__item">
+								<a href="#" class="video__link">
+									<img class="video__image" src="images/video-img.png" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="video__col">
+							<div class="video__item">
+								<a href="#" class="video__link">
+									<img class="video__image" src="images/video-img.png" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="video__col">
+							<div class="video__item">
+								<a href="#" class="video__link">
+									<img class="video__image" src="images/video-img.png" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="video__col">
+							<div class="video__item">
+								<a href="#" class="video__link">
+									<img class="video__image" src="images/video-img.png" alt="">
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<a href="#" class="video__play"><span>Смотреть</span></a>
+				</div>
+			</div>
+		</div>
+		<!--end video-->
+
 	</div>
 	<footer class="footer" id="footer">
 		<div class="container">footer</div>
@@ -99,7 +192,6 @@
 <script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
 <script src="js/lib.js"></script>
 <script src="js/script.js"></script>
-<script src="js/fontloader.js"></script><!--загрузка кастомных шрифтов -->
 <script src="js/modernizr-custom.js"></script><!--поддержка формата изображений webp-->
 </body>
 </html>

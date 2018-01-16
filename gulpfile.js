@@ -23,7 +23,11 @@ gulp.task("css", function () {
         require("postcss-font-magician")({
           variants: {
             "Roboto": {
-              "400": []
+              "400": [],
+              "300": [],
+              "700": [],
+              "900": [],
+              "100": []
             }
           },
           formats: "woff2 woff ttf"

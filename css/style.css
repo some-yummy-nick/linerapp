@@ -552,6 +552,8 @@ section {
   font-weight: 400; }
   .menu__link:hover {
     color: rgb(85, 132, 255); }
+  .menu__link:focus {
+    color: rgb(255, 255, 255); }
 
 .menu__title {
   color: rgb(48, 59, 155);

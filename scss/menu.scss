@@ -22,7 +22,7 @@
 		font-weight: 400;
 
 		&:hover {
-			text-decoration: underline;
+			color: #5584ff;
 		}
 	}
 
@@ -88,7 +88,7 @@
 		position: absolute;
 		top: -20px;
 		padding-top: 100px;
-		padding-left: 5%;
+		padding-left: 4%;
 		padding-bottom: 30px;
 		left: -5%;
 		transform: translateX(-100%);
@@ -125,6 +125,7 @@
 		&__link{
 			font-size: 14px;
 			color: #868c91;
+			padding-left: 5px;
 
 			&:hover{
 				color: #303b9b;

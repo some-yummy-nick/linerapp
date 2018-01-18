@@ -59,9 +59,13 @@
 		font-weight: 700;
 	}
 
-	@media (max-width: 1200px) {
+	@media (max-width: 1374px){
 		margin-top: 0;
 		padding-top: 0;
+	}
+
+	@media (max-width: 1200px) {
+
 
 		&__inner {
 			flex-wrap: wrap;

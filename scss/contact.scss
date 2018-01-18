@@ -1,0 +1,168 @@
+.contact {
+	padding-bottom: 90px;
+
+	&__phones {
+		text-align: center;
+		margin-bottom: 70px;
+	}
+
+	&__phone {
+		color: #4b5adc;
+		font-size: 36px;
+		font-weight: 500;
+	}
+
+	&__phone + &__phone {
+		margin-left: 50px;
+	}
+
+	&__form {
+		max-width: 738px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&__blocks {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__block {
+		margin-bottom: 25px;
+
+		&_half {
+			display: inline-block;
+			vertical-align: top;
+			width: 47.7%;
+		}
+	}
+
+	&__field,
+	&__message {
+		width: 100%;
+		padding: 10px 30px;
+		border: 1px solid rgba(132, 146, 175, 0.3);
+		font-weight: 700;
+		color: #0e1a35;
+		&::-webkit-input-placeholder {
+			opacity: 0.5;
+			font-weight: 400;
+		}
+		&::-moz-placeholder {
+			opacity: 0.5;
+			font-weight: 400;
+		}
+		/* Firefox 19+ */
+		&:-moz-placeholder {
+			opacity: 0.5;
+			font-weight: 400;
+		}
+		/* Firefox 18- */
+		&:-ms-input-placeholder {
+			opacity: 0.5;
+			font-weight: 400;
+		}
+
+		&:focus {
+			outline: none;
+			border: 1px solid #4e5ac3;
+		}
+	}
+
+	&__message {
+		resize: none;
+		margin-bottom: 30px;
+	}
+
+	&__footer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__admire {
+		max-width: 396px;
+		font-size: 14px;
+		a {
+			color: #4e5ac3;
+			text-decoration: underline;
+		}
+	}
+
+	&__submit {
+		background-color: #5584ff;
+		padding: 10px 70.5px;
+		border-radius: 24px;
+		border: 2px solid #5584ff;
+		color: #ffffff;
+		font-weight: 700;
+		text-align: center;
+
+		&:hover {
+			background: #fff;
+			color: #5584ff;
+		}
+
+		&:disabled {
+			opacity: 0.5;
+		}
+	}
+
+	@media (max-width: 1200px) and (min-width: 768px) {
+		padding-bottom: 70px;
+
+		&__phones {
+			margin-bottom: 40px;
+		}
+
+		&__phone {
+			font-size: 30px;
+		}
+		&__phone + &__phone {
+			margin-left: 40px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		padding-bottom: 45px;
+
+		&__block {
+			margin-bottom: 10px;
+		}
+
+		&__field,
+		&__message {
+			padding: 10px 15px;
+		}
+
+		&__phones {
+			margin-bottom: 20px;
+		}
+
+		&__phone {
+			font-size: 16px;
+		}
+
+		&__phone + &__phone {
+			margin-left: 20px;
+		}
+
+		&__blocks {
+			flex-wrap: wrap;
+		}
+
+		&__block {
+			&_half {
+				width: 100%;
+			}
+		}
+
+		&__footer {
+			flex-direction: column;
+		}
+
+		&__admire {
+			margin-bottom: 20px;
+		}
+	}
+}

@@ -36,10 +36,19 @@
 		top: 50%;
 		transform: translateY(-50%);
 		border-radius: 24px;
-		padding: 13px 15px;
+		padding: 13px 10px;
 		background-color: #5584ff;
 		color: #fff;
 		font-weight: 700;
+
+		&:hover{
+			color: #5584ff;
+			background: #fff;
+		}
+
+		&:focus{
+			outline: none;
+		}
 	}
 
 	&__field{
@@ -49,20 +58,12 @@
 
 	&__image{
 		text-align: center;
-		background-image: url(../images/promo-image-2.png);
 		background-position: right -100px;
 		background-repeat: no-repeat;
 		transform: translateY(80px);
 
 		img{
 			max-width: 100%;
-		}
-	}
-
-	@media screen and (max-width: $screen-md) {
-
-		&__image{
-			background-image:none;
 		}
 	}
 
@@ -96,6 +97,42 @@
 
 		&__image{
 			transform: translateY(40px);
+		}
+	}
+
+}
+
+.webp{
+	.promo{
+
+		&__image{
+			background-image: url(../images/promo-image-2.webp);
+
+		}
+
+		@media screen and (max-width: $screen-md) {
+
+			&__image{
+				background-image:none;
+			}
+		}
+
+	}
+}
+
+.no-webp{
+	.promo{
+
+		&__image{
+			background-image: url(../images/promo-image-2.png);
+
+		}
+
+		@media screen and (max-width: $screen-md) {
+
+			&__image{
+				background-image:none;
+			}
 		}
 	}
 }

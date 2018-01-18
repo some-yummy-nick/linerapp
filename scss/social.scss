@@ -9,39 +9,61 @@
 	&__item{
 		display: inline-block;
 		vertical-align: middle;
-		height: 30px;
-		width: 30px;
+		height: 32px;
+		width: 32px;
+		border-radius: 100%;
+		background: #fff;
+		overflow: hidden;
+		margin-bottom: 10px;
+		&:hover {
+			background-color: #0e1a35;
+		}
 	}
 
 	&__link{
 		display: block;
-		height: 100%;
 		text-indent: -9999px;
 		background-repeat: no-repeat;
-		background-size: contain;
+		background-position: center;
+		padding-top: 5px;
 
 		&_vk{
-			background-image: url('https://icongr.am/simple/vk.svg');
+			background-image: url('https://icongr.am/simple/vk.svg?size=18&color=4b5adc');
 
 			&:hover{
-				background-image: url('https://icongr.am/simple/vk.svg?colored');
+				background-image: url('https://icongr.am/simple/vk.svg?size=18&color=ffffff');
 			}
 		}
 
 		&_fb{
-			background-image: url('https://icongr.am/simple/facebook.svg');
+			background-image: url('https://icongr.am/fontawesome/facebook.svg?size=18&color=4b5adc');
 
 			&:hover{
-				background-image: url('https://icongr.am/simple/facebook.svg?colored');
+				background-image: url('https://icongr.am/fontawesome/facebook.svg?size=18&color=ffffff');
 			}
 		}
 
-		&_youtube{
-			background-image: url('https://icongr.am/simple/youtube.svg');
+		&_inst{
+			background-image: url('https://icongr.am/simple/instagram.svg?size=18&color=4b5adc');
 
 			&:hover{
-				background-image: url('https://icongr.am/simple/youtube.svg?colored');
+				background-image: url('https://icongr.am/simple/instagram.svg?size=18&color=ffffff');
 			}
+		}
+
+		&_twitter{
+			background-image: url('https://icongr.am/simple/twitter.svg?size=18&color=4b5adc');
+
+			&:hover{
+				background-image: url('https://icongr.am/simple/twitter.svg?size=18&color=ffffff');
+			}
+		}
+	}
+
+	@media (max-width: 1653px) {
+
+		&__link{
+			padding-top: 7px;
 		}
 	}
 }

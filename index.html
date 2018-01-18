@@ -32,6 +32,7 @@
 						class="hamburger__screen-reader-text">Меню</span>
 
 						</button>
+						<!--start menu-->
 						<div class="menu" id="js-menu" aria-expanded="false">
 							<nav>
 								<ul class="menu__list">
@@ -66,7 +67,7 @@
 										<a class="menu__link js-scroll" href="#facts">Интересные факты</a>
 									</li>
 									<li class="menu__item menu__item_hide">
-										<a class="menu__link js-scroll" href="#contacts">Контакты</a>
+										<a class="menu__link js-scroll" href="#contact">Контакты</a>
 									</li>
 									<li class="menu__item menu__item_hide">
 										<a class="menu__link" href="#">Блог</a>
@@ -75,11 +76,13 @@
 								<div class="menu__questions">
 									<div class="menu__title">остались вопросы?</div>
 									<div class="menu__phone"><a href="tel:+74995770116">+7 (499) 577-01-16</a></div>
-									<div class="menu__email"><a href="mailto:tatar@gmail.com" class="contacts__link">Напишите
-										нам</a></div>
+									<div class="menu__email">
+										<a href="#contact" class="contacts__link js-scroll">Напишите
+											нам</a></div>
 								</div>
 							</nav>
 						</div>
+						<!--end menu-->
 					</div>
 					<div class="header__block header__block_mobile">
 						<div class="header__phone">
@@ -87,6 +90,7 @@
 						</div>
 					</div>
 				</div>
+
 				<!--start promo-->
 				<div class="promo" id="promo">
 					<h1 class="title title_white">Комплексное внедрение amoCRM</h1>
@@ -100,7 +104,11 @@
 						<button class="promo__submit" type="submit">Получить консультацию</button>
 					</form>
 					<div class="promo__image">
-						<img src="images/promo-image-1.png" alt="">
+						<picture>
+							<source data-srcset="images/promo-image-1.webp">
+							<img class="lazyload" data-src="images/promo-image-1.png" alt="">
+						</picture>
+
 					</div>
 				</div>
 				<!--end promo-->
@@ -153,35 +161,35 @@
 					<div class="video__row">
 						<div class="video__col">
 							<div class="video__item">
-								<a href="#" class="video__link">
+								<a href="images/video-img.png" class="video__link" data-fancybox>
 									<img class="video__image" src="images/video-img.png" alt="">
 								</a>
 							</div>
 						</div>
 						<div class="video__col">
 							<div class="video__item">
-								<a href="#" class="video__link">
+								<a href="images/video-img.png" class="video__link" data-fancybox>
 									<img class="video__image" src="images/video-img.png" alt="">
 								</a>
 							</div>
 						</div>
 						<div class="video__col">
 							<div class="video__item">
-								<a href="#" class="video__link">
+								<a href="images/video-img.png" class="video__link" data-fancybox>
 									<img class="video__image" src="images/video-img.png" alt="">
 								</a>
 							</div>
 						</div>
 						<div class="video__col">
 							<div class="video__item">
-								<a href="#" class="video__link">
+								<a href="images/video-img.png" class="video__link" data-fancybox>
 									<img class="video__image" src="images/video-img.png" alt="">
 								</a>
 							</div>
 						</div>
 					</div>
 
-					<a href="#" class="video__play"><span>Смотреть</span></a>
+					<a href="images/video-img.png" class="video__play" data-fancybox><span>Смотреть</span></a>
 				</div>
 			</div>
 		</div>
@@ -203,7 +211,14 @@
 					</div>
 
 					<div class="about__image">
-						<img src="images/sertificate.png" alt="">
+						<a href="images/sertificate.png" data-fancybox>
+							<picture>
+								<source data-srcset="images/sertificate.webp">
+								<img class="lazyload" data-src="images/sertificate.png" alt="">
+							</picture>
+
+						</a>
+
 					</div>
 				</div>
 			</div>
@@ -227,7 +242,11 @@
 						</div>
 					</div>
 					<div class="services__image">
-						<img src="images/services.png" alt="">
+						<picture>
+							<source data-srcset="images/services.webp">
+							<img class="lazyload" data-src="images/services.png" alt="">
+						</picture>
+
 					</div>
 				</div>
 				<div class="services__bottom">
@@ -309,7 +328,7 @@
 					</div>
 					<div class="advantages__block">
 						<div class="advantages__image">
-							<img src="images/advantages-image.png" alt="">
+							<img class="lazyload" data-src="images/advantages-image.png" alt="">
 						</div>
 					</div>
 					<div class="advantages__block">
@@ -484,7 +503,7 @@
 		<!--end clients-->
 
 		<!--start prices-->
-		<section class="prices">
+		<section class="prices" id="prices">
 			<div class="container">
 				<div class="title title_white">Цены</div>
 				<div class="prices__text">Вы можете заказать базовое или комплексное внедрение CRM, а также настройку
@@ -585,10 +604,13 @@
 		<!--end prices-->
 
 		<!--start facts-->
-		<div class="facts">
+		<div class="facts" id="facts">
 			<div class="facts__inner">
 				<div class="facts__image">
-					<img class="lazyload" data-src="images/facts.png" alt="">
+					<picture>
+						<source data-srcset="images/facts.webp">
+						<img class="lazyload" data-src="images/facts.png" alt="">
+					</picture>
 				</div>
 
 				<div class="title">Интересные факты</div>
@@ -617,10 +639,79 @@
 		</div>
 		<!--end facts-->
 
+		<!--start contact-->
+		<section class="contact" id="contact">
+			<div class="container">
+				<h2 class="title">Свяжитесь с нами</h2>
+				<div class="contact__phones">
+					<a class="contact__phone" href="mailto:info@linerapp.com">info@linerapp.com</a>
+					<a class="contact__phone" href="tel:+74995770116">+7 (499) 577-01-16</a>
+				</div>
+				<form class="contact__form" data-validate>
+					<div class="contact__block">
+						<input class="contact__field" id="text" type="text" placeholder="Имя" required>
+					</div>
+
+					<div class="contact__blocks">
+						<div class="contact__block contact__block_half">
+							<input class="contact__field contact__field_half js-phone" id="tel" type="tel"
+							       placeholder="Телефон" required>
+						</div>
+						<div class="contact__block contact__block_half">
+							<input class="contact__field contact__field_half" id="email"
+							       title="Пожалуйста, введите корректный email" type="email"
+							       pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$"
+							       placeholder="E-mail" required>
+						</div>
+					</div>
+
+					<textarea class="contact__message" name="" id="" cols="30" rows="10"
+					          placeholder="Сообщение"></textarea>
+					<div class="contact__footer">
+						<div class="contact__admire">
+							Нажимая “отправить” вы даете согласие на <a href="#">обработку ваших персональных данных</a>
+							в соответствии с ФЗ №152
+						</div>
+						<button type="submit" class="contact__submit js-form-sumbmit">Отправить</button>
+					</div>
+
+				</form>
+			</div>
+		</section>
+		<!--end contact-->
+
 	</div>
-	<footer class="footer" id="footer">
-		<div class="container">footer</div>
+	<!--start footer-->
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__inner">
+				<div class="footer__left">
+					<div class="footer__copyright">© 2017 Liner App Group</div>
+				</div>
+				<div class="footer__right">
+					<span class="footer__text">Мы в социальных сетях</span>
+					<div class="social">
+						<ul class="social__list">
+							<li class="social__item">
+								<a href="#" class="social__link social__link_fb">Facebook</a>
+							</li>
+							<li class="social__item">
+								<a href="#" class="social__link social__link_inst">Instagram</a>
+							</li>
+							<li class="social__item">
+								<a href="#" class="social__link social__link_vk">В контакте</a>
+							</li>
+							<li class="social__item">
+								<a href="#" class="social__link social__link_twitter">Twitter</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
 	</footer>
+	<!--end footer-->
+
 </div>
 <script src="js/lazyloading.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -628,7 +719,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
 <script>window.Swiper || document.write('<script src="js/swiper.min.js"><\/script>')</script>
 <script src="js/lib.js"></script>
+<script src="js/imask.min.js"></script>
+<script src="js/validate.min.js"></script>
 <script src="js/script.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
 <script src="js/modernizr-custom.js"></script><!--поддержка формата изображений webp-->
 </body>
 </html>

@@ -77,7 +77,7 @@
 		list-style-type: none;
 		margin: 0;
 		padding: 0;
-		max-width: 350px;
+		max-width: 465px;
 		margin-bottom: 30px;
 
 		&:nth-child(2) {
@@ -145,6 +145,7 @@
 		.swiper-slide {
 			width: auto;
 			padding-top: 40px;
+			flex-shrink: inherit;
 
 			&_narrow {
 
@@ -189,9 +190,13 @@
 	}
 
 	@media (max-width: 1374px) {
+		padding-bottom: 40px;
+
 		&__swiper {
 			overflow: hidden;
+
 			.swiper-slide {
+				flex-shrink: 0;
 
 				&_wide {
 					margin-left: 0;
@@ -224,7 +229,7 @@
 		}
 	}
 
-	@media (max-width: 1374px) and(min-width: 768px){
+	@media (max-width: 1374px) and(min-width: 768px) {
 		&__block {
 
 			&_wide {

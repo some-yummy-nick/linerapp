@@ -29,6 +29,16 @@ function addVoidForLinks(links) {
   });
 }
 
+function addPhoneMask(element) {
+	var phone = document.querySelectorAll(element);
+
+	Array.prototype.forEach.call(phone, function (child) {
+		phoneMask = new IMask(child, {
+			mask: '{8} 000 000-00-00'
+		});
+	});
+}
+
 //Доступный hamburger https://foxland.fi/simple-accessible-svg-menu-hamburger-animation
 function hamburger(element, menu) {
   var button = document.getElementById(element),

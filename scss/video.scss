@@ -1,6 +1,5 @@
 .video {
 	position: relative;
-	background-image: url(../images/video.png);
 	background-size: cover;
 	background-position: center;
 	height: 824px;
@@ -183,4 +182,19 @@
 
 		}
 	}
+}
+
+.webp {
+
+	.video{
+		background-image: url(../images/video.webp);
+	}
+}
+
+.no-webp{
+
+	.video{
+		background-image: url(../images/video.png);
+	}
+
 }

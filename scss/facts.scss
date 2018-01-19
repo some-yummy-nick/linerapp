@@ -46,26 +46,18 @@
 		font-weight: 700;
 	}
 
-	&__item {
-
-	}
-
-	&__item + &__item {
-	}
-
 	&__text {
 		color: #0e1a35;
 		font-size: 18px;
 		font-weight: 700;
 	}
 
-	@media (max-width: 1374px){
+	@media (max-width: 1374px) {
 		margin-top: 0;
 		padding-top: 0;
 	}
 
 	@media (max-width: 1200px) {
-
 
 		&__inner {
 			flex-wrap: wrap;

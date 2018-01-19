@@ -16,7 +16,8 @@
 	}
 
 	&__image {
-		img{
+
+		img {
 			max-width: 100%;
 		}
 	}
@@ -46,43 +47,39 @@
 			display: block;
 			width: 20px;
 			height: 10px;
-			border-bottom: 3px solid  #00b06c;
-			border-left: 3px solid  #00b06c;
+			border-bottom: 3px solid #00b06c;
+			border-left: 3px solid #00b06c;
 		}
 	}
-	&__item{
+
+	&__item {
 		padding-top: 80px;
 	}
 
-	&__item + &__item{
-	}
-
-	&__text{
+	&__text {
 		color: #5b6884;
 		font-size: 18px;
 		font-weight: 300;
 		line-height: 30px;
 	}
 
-	@media (max-width: 1200px){
+	@media (max-width: 1200px) {
 
-		&__blocks{
+		&__blocks {
 			flex-wrap: wrap;
 			background: none;
 			padding-left: 0;
 			padding-right: 0;
 		}
 
-		&__block{
+		&__block {
 			flex-grow: inherit;
 
-			&:nth-child(2){
+			&:nth-child(2) {
 				width: 100%;
 				order: -1;
 			}
 		}
-
-
 
 		&__title {
 			font-size: 18px;
@@ -95,53 +92,53 @@
 			width: 50%;
 		}
 
-		&__image{
+		&__image {
 			margin-left: auto;
 			margin-right: auto;
 			width: 141px;
 		}
 
-		&__text{
+		&__text {
 			font-size: 16px;
 			line-height: 30px;
 		}
 
-		&__item{
+		&__item {
 			padding-top: 40px;
 		}
 	}
 
 	@media (max-width: 768px) {
 
-		&__block{
+		&__block {
 			width: 100%;
 			text-align: left;
 
-			&:nth-child(2){
+			&:nth-child(2) {
 				text-align: center;
 			}
 		}
 
-		&__image{
+		&__image {
 			margin-left: auto;
 			margin-right: auto;
 			width: 105px;
 		}
 
-		&__item{
+		&__item {
 			padding-top: 25px;
 		}
 
-		&__title{
+		&__title {
 			margin-bottom: 10px;
 
-			&:after{
+			&:after {
 				width: 15px;
 				height: 8px;
 			}
 		}
 
-		&__text{
+		&__text {
 			font-size: 13px;
 			line-height: 18px;
 		}

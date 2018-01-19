@@ -1,12 +1,12 @@
-.social{
+.social {
 
-	&__list{
+	&__list {
 		margin: 0;
 		padding: 0;
 		list-style-type: none;
 	}
 
-	&__item{
+	&__item {
 		display: inline-block;
 		vertical-align: middle;
 		height: 32px;
@@ -15,46 +15,47 @@
 		background: #fff;
 		overflow: hidden;
 		margin-bottom: 10px;
+
 		&:hover {
 			background-color: #0e1a35;
 		}
 	}
 
-	&__link{
+	&__link {
 		display: block;
 		text-indent: -9999px;
 		background-repeat: no-repeat;
 		background-position: center;
 		padding-top: 5px;
 
-		&_vk{
+		&_vk {
 			background-image: url('https://icongr.am/simple/vk.svg?size=18&color=4b5adc');
 
-			&:hover{
+			&:hover {
 				background-image: url('https://icongr.am/simple/vk.svg?size=18&color=ffffff');
 			}
 		}
 
-		&_fb{
+		&_fb {
 			background-image: url('https://icongr.am/fontawesome/facebook.svg?size=18&color=4b5adc');
 
-			&:hover{
+			&:hover {
 				background-image: url('https://icongr.am/fontawesome/facebook.svg?size=18&color=ffffff');
 			}
 		}
 
-		&_inst{
+		&_inst {
 			background-image: url('https://icongr.am/simple/instagram.svg?size=18&color=4b5adc');
 
-			&:hover{
+			&:hover {
 				background-image: url('https://icongr.am/simple/instagram.svg?size=18&color=ffffff');
 			}
 		}
 
-		&_twitter{
+		&_twitter {
 			background-image: url('https://icongr.am/simple/twitter.svg?size=18&color=4b5adc');
 
-			&:hover{
+			&:hover {
 				background-image: url('https://icongr.am/simple/twitter.svg?size=18&color=ffffff');
 			}
 		}
@@ -62,7 +63,7 @@
 
 	@media (max-width: 1653px) {
 
-		&__link{
+		&__link {
 			padding-top: 7px;
 		}
 	}

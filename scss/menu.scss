@@ -8,9 +8,9 @@
 		justify-content: space-around;
 	}
 
-	&__item{
+	&__item {
 
-		&_mobile{
+		&_mobile {
 			display: none;
 		}
 	}
@@ -25,12 +25,12 @@
 			color: #5584ff;
 		}
 
-		&:focus{
+		&:focus {
 			color: #fff;
 		}
 	}
 
-	&__title{
+	&__title {
 		color: #303b9b;
 		font-size: 14px;
 		font-weight: 700;
@@ -38,16 +38,16 @@
 		text-transform: uppercase;
 	}
 
-	&__questions{
+	&__questions {
 		display: none;
 	}
 
 	&__phone,
-	&__email{
+	&__email {
 		position: relative;
 		padding-left: 30px;
 
-		a{
+		a {
 			color: #303b9b;
 			font-size: 18px;
 			font-weight: 300;
@@ -66,23 +66,23 @@
 		}
 	}
 
-	&__phone{
+	&__phone {
 
 		&::after {
 			background: url(https://icongr.am/fontawesome/phone.svg?size=15&color=5584ff);
 		}
 	}
 
-	&__email{
-		
+	&__email {
+
 		&::after {
 			background: url(https://icongr.am/fontawesome/envelope.svg?size=15&color=5584ff);
 		}
 
-		a{
+		a {
 			text-decoration: underline;
 
-			&:hover{
+			&:hover {
 				text-decoration: none;
 			}
 		}
@@ -96,11 +96,11 @@
 		padding-bottom: 30px;
 		left: -5%;
 		transform: translateX(-100%);
-		transition:transform 0.3s;
+		transition: transform 0.3s;
 		box-shadow: 5px 8.7px 20px rgba(0, 0, 0, 0.18);
 
 		&.active {
-			transform:  translateX(0);
+			transform: translateX(0);
 			background: #fff;
 			z-index: 10;
 		}
@@ -115,34 +115,34 @@
 			margin-top: 10px;
 		}
 
-		&__item{
+		&__item {
 
-			&_mobile{
+			&_mobile {
 				display: block;
 			}
 
-			&_hide{
+			&_hide {
 				display: none;
 			}
 		}
 
-		&__link{
+		&__link {
 			font-size: 14px;
 			color: #868c91;
 			padding-left: 5px;
 
-			&:hover{
+			&:hover {
 				color: #303b9b;
 				text-decoration: none;
 			}
 		}
 
-		&__questions{
+		&__questions {
 			display: block;
 		}
 	}
 
-	@media screen and (max-width: $screen-md) and (min-width:$screen-sm){
+	@media screen and (max-width: $screen-md) and (min-width: $screen-sm) {
 		width: 400px;
 	}
 

@@ -24,12 +24,12 @@
 	}
 
 	&__field,
-	&__submit{
+	&__submit {
 		width: 50%;
 		border: none;
 	}
 
-	&__submit{
+	&__submit {
 		width: 55%;
 		position: absolute;
 		right: 0;
@@ -41,28 +41,28 @@
 		color: #fff;
 		font-weight: 700;
 
-		&:hover{
+		&:hover {
 			color: #5584ff;
 			background: #fff;
 		}
 
-		&:focus{
+		&:focus {
 			outline: none;
 		}
 	}
 
-	&__field{
+	&__field {
 		padding: 11px 35px;
 		color: #000000;
 	}
 
-	&__image{
+	&__image {
 		text-align: center;
 		background-position: right -100px;
 		background-repeat: no-repeat;
 		transform: translateY(80px);
 
-		img{
+		img {
 			max-width: 100%;
 		}
 	}
@@ -70,68 +70,67 @@
 	@media screen and (max-width: $screen-sm) {
 		margin-bottom: 70px;
 
-		&__text{
+		&__text {
 			font-size: 13px;
 		}
 
-		&__form{
+		&__form {
 			flex-direction: column;
 			margin-bottom: 0;
 		}
 
 		&__field,
-		&__submit{
+		&__submit {
 			width: auto;
 		}
 
-		&__field{
+		&__field {
 			border-radius: 24px;
 			text-align: center;
 			margin-bottom: 10px;
 		}
 
-		&__submit{
+		&__submit {
 			position: static;
 			transform: translateY(0);
 		}
 
-		&__image{
+		&__image {
 			transform: translateY(40px);
 		}
 	}
 
 }
 
-.webp{
-	.promo{
+.webp {
 
-		&__image{
+	.promo {
+
+		&__image {
 			background-image: url(../images/promo-image-2.webp);
-
 		}
 
 		@media screen and (max-width: $screen-md) {
 
-			&__image{
-				background-image:none;
+			&__image {
+				background-image: none;
 			}
 		}
-
 	}
 }
 
-.no-webp{
-	.promo{
+.no-webp {
 
-		&__image{
+	.promo {
+
+		&__image {
 			background-image: url(../images/promo-image-2.png);
-
 		}
 
 		@media screen and (max-width: $screen-md) {
 
-			&__image{
-				background-image:none;
+			&__image {
+				background-image: none;
 			}
 		}
 	}

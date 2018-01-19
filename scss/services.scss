@@ -16,6 +16,7 @@
 
 	&__desc {
 		float: left;
+
 		.title {
 			text-align: left;
 		}
@@ -36,6 +37,7 @@
 	}
 
 	&__block {
+
 		&:after {
 			clear: both;
 			display: table;
@@ -92,8 +94,8 @@
 
 		}
 
-		&_last{
-			&::after{
+		&_last {
+			&::after {
 				display: none;
 			}
 		}
@@ -200,10 +202,6 @@
 		&__image {
 			top: -40%;
 			right: -15%;
-
-			img {
-				//max-width: 100%;
-			}
 		}
 
 		&__top {
@@ -242,7 +240,6 @@
 					margin-left: inherit;
 				}
 			}
-
 		}
 
 		&__title {

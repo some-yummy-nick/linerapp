@@ -142,13 +142,13 @@
 
 	&__swiper {
 		overflow: visible;
+
 		.swiper-slide {
 			width: auto;
 			padding-top: 40px;
 			flex-shrink: inherit;
 
 			&_narrow {
-
 				min-width: 470px;
 			}
 
@@ -230,6 +230,7 @@
 	}
 
 	@media (max-width: 1374px) and(min-width: 768px) {
+
 		&__block {
 
 			&_wide {
@@ -243,6 +244,7 @@
 	}
 
 	@media (max-width: 768px) {
+
 		&__wrapper {
 			flex-direction: column;
 		}

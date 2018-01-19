@@ -22,8 +22,9 @@
 	margin-left: 20px;
 
 	&:focus {
-		outline:none;
+		outline: none;
 	}
+
 	&::before,
 	&::after {
 		content: '';
@@ -53,7 +54,7 @@
 		z-index: 11;
 
 		&::before,
-		&::after{
+		&::after {
 			background-color: #303b9b;
 		}
 
@@ -70,7 +71,7 @@
 		display: inline-block;
 	}
 
-	@media screen and (max-width: $screen-md) and (min-width:$screen-sm){
+	@media screen and (max-width: $screen-md) and (min-width: $screen-sm) {
 
 		&.opened {
 			margin-left: 215px;

@@ -1,4 +1,4 @@
-https://yeffasol.github.io/project/
+https://yeffasol.github.io/linerapp/
 
 требуется node.js версии не ниже 8.9.0 https://nodejs.org/en/
 

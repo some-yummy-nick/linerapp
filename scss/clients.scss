@@ -18,8 +18,14 @@
 		}
 	}
 
+	&__col {
+		width: calc(100% / 5);
+	}
+
 	&__image {
 		text-align: center;
+		padding-left: 10px;
+		padding-right: 10px;
 
 		img {
 			max-width: 100%;
@@ -42,13 +48,6 @@
 
 		&__row {
 			justify-content: center;
-		}
-	}
-
-	@media (max-width: 1200px) and (min-width: 768px) {
-
-		&__col {
-			width: calc(100% / 6);
 		}
 	}
 

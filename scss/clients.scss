@@ -12,6 +12,10 @@
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: 50px;
+
+		&_center {
+			justify-content: center;
+		}
 	}
 
 	&__image {
@@ -19,6 +23,7 @@
 
 		img {
 			max-width: 100%;
+			max-height: 150px;
 		}
 	}
 
@@ -33,12 +38,10 @@
 		}
 	}
 
-	@media (max-width: 1422px) {
-		&__row {
+	@media (max-width: 1547px) {
 
-			&_center {
-				justify-content: center;
-			}
+		&__row {
+			justify-content: center;
 		}
 	}
 

@@ -1111,7 +1111,7 @@ section {
   text-align: center; }
   .clients__image img {
     max-width: 100%;
-    max-height: 150px; }
+    max-height: 100px; }
 
 /**
  * Swiper 4.1.0

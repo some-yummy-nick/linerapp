@@ -1,7 +1,13 @@
 .about {
+	position: relative;
 	background-color: #5584ff;
 	padding-top: 70px;
 	padding-bottom: 70px;
+
+	@-moz-document url-prefix(){
+		transform: translateY(-20px);
+		z-index: 20;
+	}
 
 	.title {
 		text-align: left;

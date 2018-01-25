@@ -166,9 +166,10 @@
 		}
 
 		.swiper-pagination-bullet {
-			background-color: #45c2f0;
+			background-color: #fff;
 			opacity: 1;
-
+			width: 10px;
+			height: 10px;
 		}
 
 		.swiper-pagination-bullet-active {
@@ -181,9 +182,9 @@
 				left: 50%;
 				top: 50%;
 				transform: translateX(-50%) translateY(-50%);
-				width: 21px;
-				height: 21px;
-				border: 3px solid #45c1f0;
+				width: 25px;
+				height: 25px;
+				border: 3px solid #fff;
 				border-radius: 100%;
 			}
 		}
@@ -257,6 +258,16 @@
 					width: 100%;
 
 				}
+			}
+		}
+
+		&__price{
+			font-size: 48px;
+		}
+
+		&__swiper{
+			.swiper-slide_narrow{
+				min-width: inherit;
 			}
 		}
 	}
